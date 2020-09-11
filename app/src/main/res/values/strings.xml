@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">GADS-Leaderboard</string>
+    <string name="leaderboard_activity_main">LEADERBOARD</string>
+    <string name="learning_leaders_tab">Learning Leaders</string>
+    <string name="skill_iq_leaders_Tab">Skill IQ Leaders</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="submit_project">Project Submission</string>
+    <string name="submit">Submit</string>
+    <string name="learner_badge">learnerBadge</string>
+    <string name="cancel_submission">cancel submission</string>
+    <string name="are_u_sure">Are you sure ?</string>
+    <string name="yes_submit">Yes</string>
+
+</resources>
