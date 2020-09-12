@@ -12,10 +12,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.gads_leaderboard.services.GadsApiClient;
-import com.google.android.material.appbar.AppBarLayout;
-import com.google.android.material.appbar.CollapsingToolbarLayout;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -38,7 +37,7 @@ public class SubmissionActivity extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbarSubmit);
         setSupportActionBar(toolbar);
-       // getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        // getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
         //cancelImageV = findViewById(R.id.submissionCloseIV);
@@ -64,19 +63,22 @@ public class SubmissionActivity extends AppCompatActivity {
             LayoutInflater inflater = LayoutInflater.from(this);
             View view = inflater.inflate(R.layout.confirm_submission, null);
 
-            Button confirmSubmission = view.findViewById(R.id.yesSubmitBtn);
+            Button yesSubmissionBtn = view.findViewById(R.id.yesBTN);
+
             ImageView cancelBtn = view.findViewById(R.id.submissionCloseIV);
 
             AlertDialog alertDialog = new AlertDialog.Builder(this)
                     .setView(view)
                     .create();
             alertDialog.show();
-            confirmSubmission.setOnClickListener(new View.OnClickListener() {
+            yesSubmissionBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    postToGoogleServers();
 
+                    postToGoogleServers();
                     alertDialog.dismiss();
+
+
                 }
             });
 
@@ -126,16 +128,17 @@ public class SubmissionActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<Void> call, Response<Void> response) {
                         if (response.isSuccessful()) {
-                            Log.d("TAG", "-----submitted-----");
+                            //Log.d("TAG", "-----submitted-----");
+                           Toast.makeText(SubmissionActivity.this, "" + response.code(), Toast.LENGTH_LONG).show();
 
-                            /**/
-                            AlertDialog.Builder alertBuilder = new AlertDialog.Builder(getApplicationContext());
-                            AlertDialog alertDialog = alertBuilder.create();
-                            alertDialog.show();
-                            alertDialog.getWindow().setLayout(550, 350);
-                            LayoutInflater inflater = SubmissionActivity.this.getLayoutInflater();
-                            View dialogView = inflater.inflate(R.layout.success_dialog, null);
-                            alertDialog.getWindow().setContentView(dialogView);
+                            LayoutInflater inflater22 = LayoutInflater.from(SubmissionActivity.this);
+                            View v = inflater22.inflate(R.layout.success_dialog, null);
+
+                            AlertDialog alertDialog22 = new AlertDialog.Builder(SubmissionActivity.this,
+                                    R.style.Theme_MaterialComponents_Light_Dialog)
+                                    .setView(v)
+                                    .create();
+                            alertDialog22.show();
                         }
                     }
 
@@ -143,13 +146,17 @@ public class SubmissionActivity extends AppCompatActivity {
                     public void onFailure(Call<Void> call, Throwable t) {
                         Log.d("TAG", "------fail-----" + t.getMessage());
 
-                        AlertDialog.Builder alertBuilder = new AlertDialog.Builder(getApplicationContext());
-                        AlertDialog alertDialog = alertBuilder.create();
-                        alertDialog.show();
-                        alertDialog.getWindow().setLayout(550, 350);
-                        LayoutInflater inflater = SubmissionActivity.this.getLayoutInflater();
-                        View dialogView = inflater.inflate(R.layout.submission_fail_dialog, null);
-                        alertDialog.getWindow().setContentView(dialogView);
+                        Toast.makeText(SubmissionActivity.this, "failure...." , Toast.LENGTH_LONG).show();
+
+                        LayoutInflater inflater2 = LayoutInflater.from(SubmissionActivity.this);
+                        View view2 = inflater2.inflate(R.layout.submission_fail_dialog, null);
+
+                        AlertDialog alertDialog2 = new AlertDialog.Builder(SubmissionActivity.this,
+                                R.style.Theme_MaterialComponents_Light_Dialog)
+                                .setView(view2)
+                                .create();
+                        alertDialog2.show();
+
                     }
                 });
     }

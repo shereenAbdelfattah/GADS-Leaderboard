@@ -7,8 +7,8 @@
     android:padding="8dp">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="370dp"
-        android:layout_height="355dp"
+        android:layout_width="360dp"
+        android:layout_height="336dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:elevation="8dp"
@@ -39,16 +39,15 @@
                 app:layout_constraintVertical_bias="0.272" />
 
             <Button
-                android:id="@+id/yesSubmitBtn"
+                android:id="@+id/yesBTN"
                 android:layout_width="140dp"
                 android:layout_height="39dp"
-                android:layout_marginBottom="80dp"
+                android:layout_marginBottom="68dp"
                 android:background="@drawable/yes_btn_background"
                 android:text="@string/yes_submit"
                 android:textAllCaps="false"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.479"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
@@ -59,28 +58,13 @@
                 android:textAllCaps="false"
 
                 android:textSize="@dimen/text_submission_dialog"
-                app:layout_constraintBottom_toTopOf="@+id/yesSubmitBtn"
+                app:layout_constraintBottom_toTopOf="@+id/yesBTN"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.459"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.592" />
+                app:layout_constraintVertical_bias="0.779" />
 
-            <!--
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="44dp"
-                android:text="?"
-                android:textSize="40sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/textView4"
-                app:layout_constraintTop_toBottomOf="@+id/submissionCloseIV"
-                app:layout_constraintVertical_bias="0.13999999" />
--->
+            <!---->
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>

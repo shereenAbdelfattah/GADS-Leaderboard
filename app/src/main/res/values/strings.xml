@@ -12,5 +12,6 @@
     <string name="cancel_submission">cancel submission</string>
     <string name="are_u_sure">Are you sure ?</string>
     <string name="yes_submit">Yes</string>
+    <string name="submission_success">Submission successful</string>
 
 </resources>
