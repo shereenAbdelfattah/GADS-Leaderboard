@@ -153,7 +153,7 @@ public class SubmissionActivity extends AppCompatActivity {
 
                         AlertDialog alertDialog2 = new AlertDialog.Builder(SubmissionActivity.this,
                                 R.style.Theme_MaterialComponents_Light_Dialog)
-                                .setView(view2)
+                                 .setView(view2)
                                 .create();
                         alertDialog2.show();
 

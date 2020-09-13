@@ -40,7 +40,7 @@
 
             <Button
                 android:id="@+id/yesBTN"
-                android:layout_width="140dp"
+                android:layout_width="145dp"
                 android:layout_height="39dp"
                 android:layout_marginBottom="68dp"
                 android:background="@drawable/yes_btn_background"
